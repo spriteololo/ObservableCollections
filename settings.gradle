@@ -1,0 +1,3 @@
+include ':observableCollections'
+include ':app'
+rootProject.name = "ObservableCollections"
