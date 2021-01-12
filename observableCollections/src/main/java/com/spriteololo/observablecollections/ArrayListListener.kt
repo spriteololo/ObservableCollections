@@ -23,7 +23,7 @@ interface ArrayListListener<E> : BaseListener {
         Log.i(TAG, "$functionNotUsed onCleared")
     }
 
-    fun onRemovedItem(item: E) {
+    fun onRemovedItem(oldSnapshot: Collection<E>) {
         Log.i(TAG, "$functionNotUsed onRemovedItem")
     }
 

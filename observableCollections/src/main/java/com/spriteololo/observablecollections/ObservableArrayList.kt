@@ -5,7 +5,7 @@ import java.util.*
 class ObservableArrayList<E> : ArrayList<E> {
     private var callback: ArrayListListener<E>? = null
 
-    fun setListener(listener: ArrayListListener<E>) {
+    fun setListener(listener: ArrayListListener<E>?) {
         callback = listener
     }
 
@@ -64,8 +64,9 @@ class ObservableArrayList<E> : ArrayList<E> {
     }
 
     override fun remove(element: E): Boolean {
+        val snapshot = toList()
         return super.remove(element).also {
-            callback?.onRemovedItem(element)
+            callback?.onRemovedItem(snapshot)
         }
     }
 
